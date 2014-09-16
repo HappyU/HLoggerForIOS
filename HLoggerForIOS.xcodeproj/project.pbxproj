@@ -1,0 +1,454 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3A7D5E9F19C8237300CC1ABA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A7D5E9E19C8237300CC1ABA /* Foundation.framework */; };
+		3A7D5EA119C8237300CC1ABA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A7D5EA019C8237300CC1ABA /* CoreGraphics.framework */; };
+		3A7D5EA319C8237300CC1ABA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A7D5EA219C8237300CC1ABA /* UIKit.framework */; };
+		3A7D5EA919C8237300CC1ABA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3A7D5EA719C8237300CC1ABA /* InfoPlist.strings */; };
+		3A7D5EAB19C8237300CC1ABA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A7D5EAA19C8237300CC1ABA /* main.m */; };
+		3A7D5EAF19C8237300CC1ABA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A7D5EAE19C8237300CC1ABA /* AppDelegate.m */; };
+		3A7D5EB119C8237300CC1ABA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A7D5EB019C8237300CC1ABA /* Images.xcassets */; };
+		3A7D5EB819C8237300CC1ABA /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A7D5EB719C8237300CC1ABA /* XCTest.framework */; };
+		3A7D5EB919C8237300CC1ABA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A7D5E9E19C8237300CC1ABA /* Foundation.framework */; };
+		3A7D5EBA19C8237300CC1ABA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A7D5EA219C8237300CC1ABA /* UIKit.framework */; };
+		3A7D5EC219C8237300CC1ABA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3A7D5EC019C8237300CC1ABA /* InfoPlist.strings */; };
+		3A7D5EC419C8237300CC1ABA /* HLoggerForIOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A7D5EC319C8237300CC1ABA /* HLoggerForIOSTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3A7D5EBB19C8237300CC1ABA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3A7D5E9319C8237300CC1ABA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3A7D5E9A19C8237300CC1ABA;
+			remoteInfo = HLoggerForIOS;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3A7D5E9B19C8237300CC1ABA /* HLoggerForIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HLoggerForIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A7D5E9E19C8237300CC1ABA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		3A7D5EA019C8237300CC1ABA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		3A7D5EA219C8237300CC1ABA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		3A7D5EA619C8237300CC1ABA /* HLoggerForIOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HLoggerForIOS-Info.plist"; sourceTree = "<group>"; };
+		3A7D5EA819C8237300CC1ABA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3A7D5EAA19C8237300CC1ABA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3A7D5EAC19C8237300CC1ABA /* HLoggerForIOS-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HLoggerForIOS-Prefix.pch"; sourceTree = "<group>"; };
+		3A7D5EAD19C8237300CC1ABA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		3A7D5EAE19C8237300CC1ABA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		3A7D5EB019C8237300CC1ABA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		3A7D5EB619C8237300CC1ABA /* HLoggerForIOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HLoggerForIOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A7D5EB719C8237300CC1ABA /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		3A7D5EBF19C8237300CC1ABA /* HLoggerForIOSTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HLoggerForIOSTests-Info.plist"; sourceTree = "<group>"; };
+		3A7D5EC119C8237300CC1ABA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3A7D5EC319C8237300CC1ABA /* HLoggerForIOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HLoggerForIOSTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3A7D5E9819C8237300CC1ABA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A7D5EA119C8237300CC1ABA /* CoreGraphics.framework in Frameworks */,
+				3A7D5EA319C8237300CC1ABA /* UIKit.framework in Frameworks */,
+				3A7D5E9F19C8237300CC1ABA /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A7D5EB319C8237300CC1ABA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A7D5EB819C8237300CC1ABA /* XCTest.framework in Frameworks */,
+				3A7D5EBA19C8237300CC1ABA /* UIKit.framework in Frameworks */,
+				3A7D5EB919C8237300CC1ABA /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3A7D5E9219C8237300CC1ABA = {
+			isa = PBXGroup;
+			children = (
+				3A7D5EA419C8237300CC1ABA /* HLoggerForIOS */,
+				3A7D5EBD19C8237300CC1ABA /* HLoggerForIOSTests */,
+				3A7D5E9D19C8237300CC1ABA /* Frameworks */,
+				3A7D5E9C19C8237300CC1ABA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3A7D5E9C19C8237300CC1ABA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3A7D5E9B19C8237300CC1ABA /* HLoggerForIOS.app */,
+				3A7D5EB619C8237300CC1ABA /* HLoggerForIOSTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3A7D5E9D19C8237300CC1ABA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3A7D5E9E19C8237300CC1ABA /* Foundation.framework */,
+				3A7D5EA019C8237300CC1ABA /* CoreGraphics.framework */,
+				3A7D5EA219C8237300CC1ABA /* UIKit.framework */,
+				3A7D5EB719C8237300CC1ABA /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3A7D5EA419C8237300CC1ABA /* HLoggerForIOS */ = {
+			isa = PBXGroup;
+			children = (
+				3A7D5EAD19C8237300CC1ABA /* AppDelegate.h */,
+				3A7D5EAE19C8237300CC1ABA /* AppDelegate.m */,
+				3A7D5EB019C8237300CC1ABA /* Images.xcassets */,
+				3A7D5EA519C8237300CC1ABA /* Supporting Files */,
+			);
+			path = HLoggerForIOS;
+			sourceTree = "<group>";
+		};
+		3A7D5EA519C8237300CC1ABA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3A7D5EA619C8237300CC1ABA /* HLoggerForIOS-Info.plist */,
+				3A7D5EA719C8237300CC1ABA /* InfoPlist.strings */,
+				3A7D5EAA19C8237300CC1ABA /* main.m */,
+				3A7D5EAC19C8237300CC1ABA /* HLoggerForIOS-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3A7D5EBD19C8237300CC1ABA /* HLoggerForIOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				3A7D5EC319C8237300CC1ABA /* HLoggerForIOSTests.m */,
+				3A7D5EBE19C8237300CC1ABA /* Supporting Files */,
+			);
+			path = HLoggerForIOSTests;
+			sourceTree = "<group>";
+		};
+		3A7D5EBE19C8237300CC1ABA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3A7D5EBF19C8237300CC1ABA /* HLoggerForIOSTests-Info.plist */,
+				3A7D5EC019C8237300CC1ABA /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3A7D5E9A19C8237300CC1ABA /* HLoggerForIOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3A7D5EC719C8237300CC1ABA /* Build configuration list for PBXNativeTarget "HLoggerForIOS" */;
+			buildPhases = (
+				3A7D5E9719C8237300CC1ABA /* Sources */,
+				3A7D5E9819C8237300CC1ABA /* Frameworks */,
+				3A7D5E9919C8237300CC1ABA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HLoggerForIOS;
+			productName = HLoggerForIOS;
+			productReference = 3A7D5E9B19C8237300CC1ABA /* HLoggerForIOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3A7D5EB519C8237300CC1ABA /* HLoggerForIOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3A7D5ECA19C8237300CC1ABA /* Build configuration list for PBXNativeTarget "HLoggerForIOSTests" */;
+			buildPhases = (
+				3A7D5EB219C8237300CC1ABA /* Sources */,
+				3A7D5EB319C8237300CC1ABA /* Frameworks */,
+				3A7D5EB419C8237300CC1ABA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3A7D5EBC19C8237300CC1ABA /* PBXTargetDependency */,
+			);
+			name = HLoggerForIOSTests;
+			productName = HLoggerForIOSTests;
+			productReference = 3A7D5EB619C8237300CC1ABA /* HLoggerForIOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3A7D5E9319C8237300CC1ABA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = hirisun;
+				TargetAttributes = {
+					3A7D5EB519C8237300CC1ABA = {
+						TestTargetID = 3A7D5E9A19C8237300CC1ABA;
+					};
+				};
+			};
+			buildConfigurationList = 3A7D5E9619C8237300CC1ABA /* Build configuration list for PBXProject "HLoggerForIOS" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 3A7D5E9219C8237300CC1ABA;
+			productRefGroup = 3A7D5E9C19C8237300CC1ABA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3A7D5E9A19C8237300CC1ABA /* HLoggerForIOS */,
+				3A7D5EB519C8237300CC1ABA /* HLoggerForIOSTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3A7D5E9919C8237300CC1ABA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A7D5EA919C8237300CC1ABA /* InfoPlist.strings in Resources */,
+				3A7D5EB119C8237300CC1ABA /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A7D5EB419C8237300CC1ABA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A7D5EC219C8237300CC1ABA /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3A7D5E9719C8237300CC1ABA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A7D5EAF19C8237300CC1ABA /* AppDelegate.m in Sources */,
+				3A7D5EAB19C8237300CC1ABA /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A7D5EB219C8237300CC1ABA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A7D5EC419C8237300CC1ABA /* HLoggerForIOSTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3A7D5EBC19C8237300CC1ABA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3A7D5E9A19C8237300CC1ABA /* HLoggerForIOS */;
+			targetProxy = 3A7D5EBB19C8237300CC1ABA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3A7D5EA719C8237300CC1ABA /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3A7D5EA819C8237300CC1ABA /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		3A7D5EC019C8237300CC1ABA /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3A7D5EC119C8237300CC1ABA /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3A7D5EC519C8237300CC1ABA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3A7D5EC619C8237300CC1ABA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3A7D5EC819C8237300CC1ABA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HLoggerForIOS/HLoggerForIOS-Prefix.pch";
+				INFOPLIST_FILE = "HLoggerForIOS/HLoggerForIOS-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		3A7D5EC919C8237300CC1ABA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HLoggerForIOS/HLoggerForIOS-Prefix.pch";
+				INFOPLIST_FILE = "HLoggerForIOS/HLoggerForIOS-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		3A7D5ECB19C8237300CC1ABA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/HLoggerForIOS.app/HLoggerForIOS";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HLoggerForIOS/HLoggerForIOS-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "HLoggerForIOSTests/HLoggerForIOSTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		3A7D5ECC19C8237300CC1ABA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/HLoggerForIOS.app/HLoggerForIOS";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HLoggerForIOS/HLoggerForIOS-Prefix.pch";
+				INFOPLIST_FILE = "HLoggerForIOSTests/HLoggerForIOSTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3A7D5E9619C8237300CC1ABA /* Build configuration list for PBXProject "HLoggerForIOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A7D5EC519C8237300CC1ABA /* Debug */,
+				3A7D5EC619C8237300CC1ABA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3A7D5EC719C8237300CC1ABA /* Build configuration list for PBXNativeTarget "HLoggerForIOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A7D5EC819C8237300CC1ABA /* Debug */,
+				3A7D5EC919C8237300CC1ABA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		3A7D5ECA19C8237300CC1ABA /* Build configuration list for PBXNativeTarget "HLoggerForIOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A7D5ECB19C8237300CC1ABA /* Debug */,
+				3A7D5ECC19C8237300CC1ABA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3A7D5E9319C8237300CC1ABA /* Project object */;
+}
