@@ -14,4 +14,5 @@
 
 +(NSString *)getNetWorkType;
 
++(NSString *)getSystemTime;
 @end

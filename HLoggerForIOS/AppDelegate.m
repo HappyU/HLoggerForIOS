@@ -18,7 +18,7 @@
      *  ssdsd
      */
     
-    NSLog(@"%@",[LogPoint getNetWorkType]);
+    NSLog(@"-----%@",[LogPoint getSystemTime]);
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];

@@ -164,12 +164,9 @@
 
 +(NSString *)getSystemTime
 {
-    NSString* date;
-    NSDateFormatter* formatter = [[NSDateFormatter alloc]init];
-    [formatter setDateFormat:@"YYYY-MM-dd%20hh:mm:ss"];
-    date = [formatter stringFromDate:[NSDate date]];
-    
-    return date;
+    NSDate *date = [NSDate date];
+    NSString *timeSp = [NSString stringWithFormat:@"%ld", (long)[date timeIntervalSince1970]];
+    return timeSp;
 }
 
 
