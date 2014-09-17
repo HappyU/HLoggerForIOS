@@ -5,34 +5,34 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>F9BE2594-2F0F-4DCA-B91E-FA46BE4C61D4</string>
+	<string>EA6F9B79-5A73-42B1-94A3-5732817EC32F</string>
 	<key>IDESourceControlProjectName</key>
 	<string>HLoggerForIOS</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>07BBA771-0B97-4E0C-B5A6-7A8C73A88AFA</key>
-		<string>https://github.com/HappyU/HLoggerForIOS.git</string>
+		<key>F26AE52C-F3BD-45FF-8C0D-31FC98D60042</key>
+		<string>https://github.com/sunshine910/HLoggerForIOS.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>HLoggerForIOS.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>07BBA771-0B97-4E0C-B5A6-7A8C73A88AFA</key>
+		<key>F26AE52C-F3BD-45FF-8C0D-31FC98D60042</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/HappyU/HLoggerForIOS.git</string>
+	<string>https://github.com/sunshine910/HLoggerForIOS.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>07BBA771-0B97-4E0C-B5A6-7A8C73A88AFA</string>
+	<string>F26AE52C-F3BD-45FF-8C0D-31FC98D60042</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>07BBA771-0B97-4E0C-B5A6-7A8C73A88AFA</string>
+			<string>F26AE52C-F3BD-45FF-8C0D-31FC98D60042</string>
 			<key>IDESourceControlWCCName</key>
 			<string>HLoggerForIOS</string>
 		</dict>

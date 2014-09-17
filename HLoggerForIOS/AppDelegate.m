@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "LogPoint.h"
+#import "HLog.h"
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -17,8 +18,9 @@
     /**
      *  ssdsd
      */
+    NSLog(@"%@",[HLog getAllProperties]);
     
-    NSLog(@"-----%@",[LogPoint getSystemTime]);
+//    NSLog(@"-----%@",[LogPoint getSystemTime]);
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];

@@ -10,4 +10,6 @@
 
 @interface HLog : NSObject
 
++ (NSArray *)getAllProperties;
+
 @end
