@@ -42,7 +42,7 @@
  *
  *  @return 设备类别
  */
-+(NSString *)getDeviceModel
++(NSString *)getDeviceType
 {
     UIDevice *device = [[UIDevice alloc] init];
     
@@ -55,7 +55,7 @@
  *
  *  @return 设备运行系统
  */
-+(NSString *)getDeviceSystemName
++(NSString *)getSysName
 {
     UIDevice *device = [[UIDevice alloc] init];
     
@@ -68,7 +68,7 @@
  *
  *  @return 设备系统版本
  */
-+(NSString *)getDeviceSystemVersion
++(NSString *)getSysVersion
 {
     UIDevice *device = [[UIDevice alloc] init];
     
@@ -94,7 +94,7 @@
  *
  *  @return 当前网络状态
  */
-+(NSString *)getNetWorkType
++(NSString *)getNetType
 {
     UIApplication *application = [UIApplication sharedApplication];
     
@@ -162,7 +162,7 @@
 
 
 
-+(NSString *)getSystemTime
++(NSString *)getCurDate
 {
     NSDate *date = [NSDate date];
     NSString *timeSp = [NSString stringWithFormat:@"%ld", (long)[date timeIntervalSince1970]];
