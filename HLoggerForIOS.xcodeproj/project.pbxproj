@@ -20,6 +20,7 @@
 		3A7D5EC219C8237300CC1ABA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3A7D5EC019C8237300CC1ABA /* InfoPlist.strings */; };
 		3A7D5EC419C8237300CC1ABA /* HLoggerForIOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A7D5EC319C8237300CC1ABA /* HLoggerForIOSTests.m */; };
 		3A7D5ED019C8252E00CC1ABA /* LogPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A7D5ECF19C8252E00CC1ABA /* LogPoint.m */; };
+		3AA46BBB19C9667300C2EA01 /* HLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AA46BBA19C9667300C2EA01 /* HLog.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		3A7D5EC319C8237300CC1ABA /* HLoggerForIOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HLoggerForIOSTests.m; sourceTree = "<group>"; };
 		3A7D5ECE19C8252E00CC1ABA /* LogPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogPoint.h; sourceTree = "<group>"; };
 		3A7D5ECF19C8252E00CC1ABA /* LogPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogPoint.m; sourceTree = "<group>"; };
+		3AA46BB919C9667300C2EA01 /* HLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLog.h; sourceTree = "<group>"; };
+		3AA46BBA19C9667300C2EA01 /* HLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLog.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +156,8 @@
 			children = (
 				3A7D5ECE19C8252E00CC1ABA /* LogPoint.h */,
 				3A7D5ECF19C8252E00CC1ABA /* LogPoint.m */,
+				3AA46BB919C9667300C2EA01 /* HLog.h */,
+				3AA46BBA19C9667300C2EA01 /* HLog.m */,
 			);
 			path = HLogger;
 			sourceTree = "<group>";
@@ -255,6 +260,7 @@
 				3A7D5EAF19C8237300CC1ABA /* AppDelegate.m in Sources */,
 				3A7D5ED019C8252E00CC1ABA /* LogPoint.m in Sources */,
 				3A7D5EAB19C8237300CC1ABA /* main.m in Sources */,
+				3AA46BBB19C9667300C2EA01 /* HLog.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
