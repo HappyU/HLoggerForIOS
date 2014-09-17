@@ -10,4 +10,8 @@
 
 @interface LogPoint : NSObject
 
+
+
++(NSString *)getNetWorkType;
+
 @end

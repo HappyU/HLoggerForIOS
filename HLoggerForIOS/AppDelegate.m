@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "LogPoint.h"
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -17,6 +17,9 @@
     /**
      *  ssdsd
      */
+    
+    NSLog(@"%@",[LogPoint getNetWorkType]);
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
