@@ -12,10 +12,13 @@
 
 
 
--(void)getName
++(void)getName
 {
-    NSDictionary *dTmp=[[NSDictionary alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"log" ofType:@"plist"]];
+    NSDictionary *dic=[[NSDictionary alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"log" ofType:@"plist"]];
     
+    NSString *log = [dic objectForKey:@"MyLog"];
+    
+    NSLog(@"log--%@",log);
     
 
 }

@@ -18,6 +18,9 @@
     /**
      *  ssdsd
      */
+    
+    [HLog getName];
+    
     NSLog(@"%@",[HLog getAllProperties]);
     
 //    NSLog(@"-----%@",[LogPoint getSystemTime]);

@@ -3,6 +3,6 @@
 <plist version="1.0">
 <dict>
 	<key>MyLog</key>
-	<string>&lt;xml&gt;&lt;log&gt;&lt;version&gt;getAppVersion&lt;/version&gt;&lt;/log&gt;&lt;/xml&gt;</string>
+	<string>&lt;xml&gt;&lt;log&gt;&lt;version&gt;#getAppVersion#&lt;/version&gt;&lt;/log&gt;&lt;/xml&gt;</string>
 </dict>
 </plist>

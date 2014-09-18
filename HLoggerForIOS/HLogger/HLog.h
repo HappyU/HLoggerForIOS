@@ -12,4 +12,7 @@
 
 + (NSArray *)getAllProperties;
 
+
++(void)getName;
+
 @end
