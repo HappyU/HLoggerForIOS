@@ -7,23 +7,16 @@
 //
 
 #import "AppDelegate.h"
-#import "LogPoint.h"
-#import "HLog.h"
+#import "Logger.h"
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    /**
-     *  ssdsd
-     */
+
     
-    [HLog getName];
-    
-    NSLog(@"%@",[HLog getAllProperties]);
-    
-//    NSLog(@"-----%@",[LogPoint getSystemTime]);
+    LOGNOTICE(@"3333%@,%@",@"ddddsf",@"mmmmm");
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];

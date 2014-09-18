@@ -15,4 +15,6 @@
 
 +(void)getName;
 
++(void)info:(NSString *)msg;
+
 @end

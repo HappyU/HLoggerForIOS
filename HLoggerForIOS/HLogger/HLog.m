@@ -8,17 +8,44 @@
 
 #import "HLog.h"
 #import <objc/runtime.h>
+
+
+
+
+@interface HLogger : NSObject
+
++(void)setLogInfo;
+
+@end
+
+@implementation HLogger
+
++(void)setLogInfo
+{
+    NSLog(@"33");
+}
+
+@end
+
+
+
 @implementation HLog
+{
+
+}
+
 
 
 
 +(void)getName
 {
+    
+    
+    
     NSDictionary *dic=[[NSDictionary alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"log" ofType:@"plist"]];
     
-    NSString *log = [dic objectForKey:@"MyLog"];
-    
-    NSLog(@"log--%@",log);
+    NSString *log = [dic objectForKey:@"info"];
+
     
 
 }
@@ -45,6 +72,12 @@
     free(properties);
     
     return propertiesArray;  
+    
+}
+
+
++(void)info:(NSString *)msg
+{
     
 }
 
