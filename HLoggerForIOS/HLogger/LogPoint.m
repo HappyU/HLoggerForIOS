@@ -45,7 +45,6 @@
 +(NSString *)getDeviceType
 {
     UIDevice *device = [[UIDevice alloc] init];
-    
     return device.model;
 }
 
@@ -58,7 +57,6 @@
 +(NSString *)getSysName
 {
     UIDevice *device = [[UIDevice alloc] init];
-    
     return device.systemName;
 }
 
@@ -71,7 +69,6 @@
 +(NSString *)getSysVersion
 {
     UIDevice *device = [[UIDevice alloc] init];
-    
     return device.systemVersion;
 }
 
@@ -84,7 +81,6 @@
 +(NSString *)getDeviceID
 {
     UIDevice *device = [[UIDevice alloc] init];
-    
     return device.identifierForVendor.UUIDString;
 }
 
@@ -97,71 +93,42 @@
 +(NSString *)getNetType
 {
     UIApplication *application = [UIApplication sharedApplication];
-    
     NSArray *subviews = [[[application valueForKey:@"statusBar"] valueForKey:@"foregroundView"]subviews];
-    
     NSNumber *dataNetWorkItemView = nil;
-    
     for (id subView in subviews) {
         
         if ([subView isKindOfClass:[NSClassFromString(@"UIStatusBarDataNetworkItemView") class]]) {
-            
             dataNetWorkItemView = subView;
-            
             break;
-            
         }
-        
     }
-    
     NSString *networkType;
-    
     switch ([[dataNetWorkItemView valueForKey:@"dataNetworkType"]integerValue]) {
-            
         case 0:
-            
             networkType = @"无网络";
-            
             break;
-            
-            
-            
         case 1:
-            
             networkType = @"2G";
-            
             break;
-            
-            
-            
         case 2:
-            
             networkType = @"3G";
-            
             break;
-            
         case 3:
-            
             networkType = @"4G";
-            
             break;
-            
-            
-            
         default:
-            
             networkType = @"wifi";
-            
             break;
-            
     }
-    
     return networkType;
-
 }
 
 
-
+/**
+ *  获得当前的时间戳
+ *
+ *  @return 字符串
+ */
 +(NSString *)getCurDate
 {
     NSDate *date = [NSDate date];
@@ -171,70 +138,28 @@
 
 
 // 获取当前设备可用内存(单位：MB）
-
 - (double)availableMemory
-
 {
-    
     vm_statistics_data_t vmStats;
-    
     mach_msg_type_number_t infoCount = HOST_VM_INFO_COUNT;
-    
-    kern_return_t kernReturn = host_statistics(mach_host_self(),
-                                               
-                                               HOST_VM_INFO,
-                                               
-                                               (host_info_t)&vmStats,
-                                               
-                                               &infoCount);
-    
-    
-    
+    kern_return_t kernReturn = host_statistics(mach_host_self(),HOST_VM_INFO,(host_info_t)&vmStats,&infoCount);
     if (kernReturn != KERN_SUCCESS) {
-        
         return NSNotFound;
-        
     }
-    
-    
-    
     return ((vm_page_size *vmStats.free_count) / 1024.0) / 1024.0;
-    
 }
 
 
 // 获取当前任务所占用的内存（单位：MB）
-
 - (double)usedMemory
-
 {
-    
     task_basic_info_data_t taskInfo;
-    
     mach_msg_type_number_t infoCount = TASK_BASIC_INFO_COUNT;
-    
-    kern_return_t kernReturn = task_info(mach_task_self(),
-                                         
-                                         TASK_BASIC_INFO,
-                                         
-                                         (task_info_t)&taskInfo,
-                                         
-                                         &infoCount);
-    
-    
-    
-    if (kernReturn != KERN_SUCCESS
-        
-        ) {
-        
+    kern_return_t kernReturn = task_info(mach_task_self(),TASK_BASIC_INFO,(task_info_t)&taskInfo,&infoCount);
+    if (kernReturn != KERN_SUCCESS) {
         return NSNotFound;
-        
     }
-    
-    
-    
     return taskInfo.resident_size / 1024.0 / 1024.0;
-    
 }
 
 
@@ -288,11 +213,9 @@
 			tot_cpu = tot_cpu + basic_info_th->cpu_usage / (float)TH_USAGE_SCALE;
 		}
 	}
-    
 	kr = vm_deallocate( mach_task_self(), (vm_offset_t)thread_list, thread_count * sizeof(thread_t) );
 	if ( KERN_SUCCESS != kr )
 		return 0.0f;
-    
 	return tot_cpu;
 }
 
