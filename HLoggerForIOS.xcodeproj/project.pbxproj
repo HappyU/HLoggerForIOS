@@ -20,6 +20,7 @@
 		3A7D5EBA19C8237300CC1ABA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A7D5EA219C8237300CC1ABA /* UIKit.framework */; };
 		3A7D5EC219C8237300CC1ABA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3A7D5EC019C8237300CC1ABA /* InfoPlist.strings */; };
 		3A7D5EC419C8237300CC1ABA /* HLoggerForIOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A7D5EC319C8237300CC1ABA /* HLoggerForIOSTests.m */; };
+		3ACB89C619D00CE600805396 /* LogFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ACB89C519D00CE600805396 /* LogFile.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		3A7D5EBF19C8237300CC1ABA /* HLoggerForIOSTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HLoggerForIOSTests-Info.plist"; sourceTree = "<group>"; };
 		3A7D5EC119C8237300CC1ABA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3A7D5EC319C8237300CC1ABA /* HLoggerForIOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HLoggerForIOSTests.m; sourceTree = "<group>"; };
+		3ACB89C419D00CE600805396 /* LogFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogFile.h; sourceTree = "<group>"; };
+		3ACB89C519D00CE600805396 /* LogFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogFile.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +156,8 @@
 			children = (
 				3A5ABAAD19CACB6E000EE015 /* Logger.h */,
 				3A5ABAAE19CACB6E000EE015 /* Logger.m */,
+				3ACB89C419D00CE600805396 /* LogFile.h */,
+				3ACB89C519D00CE600805396 /* LogFile.m */,
 			);
 			path = HLogger;
 			sourceTree = "<group>";
@@ -254,6 +259,7 @@
 			files = (
 				3A7D5EAF19C8237300CC1ABA /* AppDelegate.m in Sources */,
 				3A5ABAAF19CACB6E000EE015 /* Logger.m in Sources */,
+				3ACB89C619D00CE600805396 /* LogFile.m in Sources */,
 				3A7D5EAB19C8237300CC1ABA /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
