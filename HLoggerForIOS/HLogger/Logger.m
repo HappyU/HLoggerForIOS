@@ -220,7 +220,6 @@ void WriteLog(int ulErrorLevel, const char *func, int lineNumber, NSString *form
     
     
     
-    
     NSString *strErrorLevel = [[NSString alloc] init];
     switch (ulErrorLevel) {
         case ERR_LOG:
@@ -229,8 +228,11 @@ void WriteLog(int ulErrorLevel, const char *func, int lineNumber, NSString *form
         case WARN_LOG:
             strErrorLevel = @"Warning";
             break;
-        case NOTICE_LOG:
-            strErrorLevel = @"Notice";
+        case INFO_LOG:
+            strErrorLevel = @"Info";
+            break;
+        case OPERATE_LOG:
+            strErrorLevel = @"Operate";
             break;
         case DEBUG_LOG:
             strErrorLevel = @"Debug";
