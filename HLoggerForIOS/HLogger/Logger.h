@@ -25,6 +25,7 @@ void WriteLog(int ulErrorLevel, const char *func, int lineNumber, NSString *form
 
 
 
+
 @interface Logger : NSObject
 
 @end

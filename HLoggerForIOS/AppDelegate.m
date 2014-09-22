@@ -16,7 +16,7 @@
     // Override point for customization after application launch.
 
     
-    HLOGNOTICE(@"3333%@,%@",@"ddddsf",@"mmmmm");
+    HLOGINFO(@"3333%@,%@",@"ddddsf",@"mmmmm");
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];

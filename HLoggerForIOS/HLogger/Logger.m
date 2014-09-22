@@ -243,4 +243,20 @@ void WriteLog(int ulErrorLevel, const char *func, int lineNumber, NSString *form
     NSLog(@"\n类名：%@ \n方法名：%@\n行数：%d \n类型：%@ \n输出：%@ \nappName：%@\n",className,methodName,lineNumber,strErrorLevel,string,[LogPoint getAppName]);
 }
 
+
+void InfoLog(const char *func,NSString *eventID,NSString *eventDesc,NSString *eventContent,NSString *eventClass,NSString *userID,NSString *format, ...)
+{
+    
+}
+
+void OperateLog(const char *func,NSString *eventID,NSString *eventDesc,NSString *eventContent,NSString *eventClass,NSString *userID,NSString *eventStart,NSString *eventEnd,NSString *format, ...)
+{
+    
+}
+
+void ErrorLog(const char *func, NSString *eventID,NSString *eventDesc,NSString *eventContent,NSString *format, ...)
+{
+    
+}
+
 @end
