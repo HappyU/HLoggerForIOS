@@ -10,18 +10,31 @@
 #import <sys/sysctl.h>
 #import <mach/mach.h>
 
-@interface LogType : NSObject
+@interface LogPoint:NSObject
+
+//获取App应用名称
++(NSString *)getAppName;
+//获取App应用版本
++(NSString *)getAppVersion;
+//获取设备类别
++(NSString *)getDeviceType;
+//获取设备运行系统
++(NSString *)getSysName;
+//获取设备系统版本
++(NSString *)getSysVersion;
+//获取设备的ID
++(NSString *)getDeviceID;
+//获取当前网络状态
++(NSString *)getNetType;
+//获得当前的时间戳
++(NSString *)getCurDate;
 
 @end
 
-@implementation LogType
+@implementation LogPoint
 
 
-/**
- *  获取App应用名称
- *
- *  @return App应用名称
- */
+
 +(NSString *)getAppName
 {
     NSDictionary *dicInfo = [[NSBundle mainBundle] infoDictionary];
@@ -29,11 +42,6 @@
     return strAppName;
 }
 
-/**
- *  获取App应用版本
- *
- *  @return App应用版本
- */
 +(NSString *)getAppVersion
 {
     NSDictionary *dicInfo = [[NSBundle mainBundle] infoDictionary];
@@ -41,60 +49,30 @@
     return strAppVersion;
 }
 
-
-/**
- *  获取设备类别
- *
- *  @return 设备类别
- */
 +(NSString *)getDeviceType
 {
     UIDevice *device = [[UIDevice alloc] init];
     return device.model;
 }
 
-
-/**
- *  获取设备运行系统
- *
- *  @return 设备运行系统
- */
 +(NSString *)getSysName
 {
     UIDevice *device = [[UIDevice alloc] init];
     return device.systemName;
 }
 
-
-/**
- *  获取设备系统版本
- *
- *  @return 设备系统版本
- */
 +(NSString *)getSysVersion
 {
     UIDevice *device = [[UIDevice alloc] init];
     return device.systemVersion;
 }
 
-
-/**
- *  获取设备ID
- *
- *  @return 设备ID
- */
 +(NSString *)getDeviceID
 {
     UIDevice *device = [[UIDevice alloc] init];
     return device.identifierForVendor.UUIDString;
 }
 
-
-/**
- *  获取当前网络状态
- *
- *  @return 当前网络状态
- */
 +(NSString *)getNetType
 {
     UIApplication *application = [UIApplication sharedApplication];
@@ -128,12 +106,6 @@
     return networkType;
 }
 
-
-/**
- *  获得当前的时间戳
- *
- *  @return 字符串
- */
 +(NSString *)getCurDate
 {
     NSDate *date = [NSDate date];
@@ -141,9 +113,8 @@
     return timeSp;
 }
 
-
 // 获取当前设备可用内存(单位：MB）
-- (double)availableMemory
++(double)availableMemory
 {
     vm_statistics_data_t vmStats;
     mach_msg_type_number_t infoCount = HOST_VM_INFO_COUNT;
@@ -154,9 +125,8 @@
     return ((vm_page_size *vmStats.free_count) / 1024.0) / 1024.0;
 }
 
-
 // 获取当前任务所占用的内存（单位：MB）
-- (double)usedMemory
++(double)usedMemory
 {
     task_basic_info_data_t taskInfo;
     mach_msg_type_number_t infoCount = TASK_BASIC_INFO_COUNT;
@@ -167,14 +137,8 @@
     return taskInfo.resident_size / 1024.0 / 1024.0;
 }
 
-
-
-/**
- *  获取CPU占用率
- *
- *  @return 占用率
- */
-- (float)cpu_usage
+//获取CPU占用率
++(float)cpu_usage
 {
 	kern_return_t			kr = { 0 };
 	task_info_data_t		tinfo = { 0 };
@@ -231,6 +195,8 @@
 
 @implementation Logger
 
+
+
 void WriteLog(int ulErrorLevel, const char *func, int lineNumber, NSString *format, ...)
 {
     va_list args;
@@ -253,6 +219,8 @@ void WriteLog(int ulErrorLevel, const char *func, int lineNumber, NSString *form
     }
     
     
+    
+    
     NSString *strErrorLevel = [[NSString alloc] init];
     switch (ulErrorLevel) {
         case ERR_LOG:
@@ -270,7 +238,7 @@ void WriteLog(int ulErrorLevel, const char *func, int lineNumber, NSString *form
         default:
             break;
     }
-    NSLog(@"\n类名：%@ \n方法名：%@\n 行数：%d \n类型：%@ \n输出：%@ \n",className,methodName,lineNumber,strErrorLevel,string);
+    NSLog(@"\n类名：%@ \n方法名：%@\n行数：%d \n类型：%@ \n输出：%@ \nappName：%@\n",className,methodName,lineNumber,strErrorLevel,string,[LogPoint getAppName]);
 }
 
 @end
