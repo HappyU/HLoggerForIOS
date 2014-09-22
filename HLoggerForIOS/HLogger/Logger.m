@@ -225,6 +225,7 @@ void WriteLog(int ulErrorLevel, const char *func, int lineNumber, NSString *form
     {
         case ERR_LOG:
             strErrorLevel = @"Error";
+            [Logger printfErrorWithString:string];
             break;
         case WARN_LOG:
             strErrorLevel = @"Warning";
@@ -266,6 +267,12 @@ void WriteLog(int ulErrorLevel, const char *func, int lineNumber, NSString *form
     //    NSString *userID = GET_USER(@"userID");
     NSString *userID = @"admin";
     NSLog(@"<log type=\"opertaion\"><eventID></eventID><eventDesc></eventDesc><userID>%@</userID><eventStart></eventStart><eventEnd></eventEnd><IP></IP><netstate>%@</netstate></log>",userID,[LogPoint getNetType]);
+}
+
+
++(void)printfErrorWithString:(NSString *)string
+{
+    NSLog(@"<log type=\"error\"><eventID></eventID><eventDesc></eventDesc><eventContent>%@</eventContent></log>",string);
 }
 
 
