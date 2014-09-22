@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		187C7FB919C983CC00CABBCD /* log.plist in Resources */ = {isa = PBXBuildFile; fileRef = 187C7FB819C983CC00CABBCD /* log.plist */; };
 		3A5ABAAF19CACB6E000EE015 /* Logger.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5ABAAE19CACB6E000EE015 /* Logger.m */; };
 		3A7D5E9F19C8237300CC1ABA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A7D5E9E19C8237300CC1ABA /* Foundation.framework */; };
 		3A7D5EA119C8237300CC1ABA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A7D5EA019C8237300CC1ABA /* CoreGraphics.framework */; };
@@ -34,7 +33,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		187C7FB819C983CC00CABBCD /* log.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = log.plist; sourceTree = "<group>"; };
 		3A5ABAAD19CACB6E000EE015 /* Logger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Logger.h; sourceTree = "<group>"; };
 		3A5ABAAE19CACB6E000EE015 /* Logger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Logger.m; sourceTree = "<group>"; };
 		3A7D5E9B19C8237300CC1ABA /* HLoggerForIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HLoggerForIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -153,7 +151,6 @@
 		3A7D5ECD19C824FC00CC1ABA /* HLogger */ = {
 			isa = PBXGroup;
 			children = (
-				187C7FB819C983CC00CABBCD /* log.plist */,
 				3A5ABAAD19CACB6E000EE015 /* Logger.h */,
 				3A5ABAAE19CACB6E000EE015 /* Logger.m */,
 			);
@@ -236,7 +233,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A7D5EA919C8237300CC1ABA /* InfoPlist.strings in Resources */,
-				187C7FB919C983CC00CABBCD /* log.plist in Resources */,
 				3A7D5EB119C8237300CC1ABA /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
