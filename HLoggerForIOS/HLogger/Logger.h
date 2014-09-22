@@ -23,7 +23,19 @@
 
 void WriteLog(int ulErrorLevel, const char *func, int lineNumber, NSString *format, ...);
 
+//void InfoLog(const char *func,NSString *format, ...);
+//
+//#define LOGINFO(format,...) InfoLog(__FUNCTION__,format);
 
+
+#define SAVE_USER(dic) \
+NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];\
+for (id str in dic.allKeys){\
+[userDefault setObject:[dic objectForKey:str] forKey:str];\
+}\
+[userDefault synchronize];
+
+#define GET_USER(key) [[NSUserDefaults standardUserDefaults] objectForKey:key]
 
 
 @interface Logger : NSObject

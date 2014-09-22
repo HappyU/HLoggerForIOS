@@ -221,7 +221,8 @@ void WriteLog(int ulErrorLevel, const char *func, int lineNumber, NSString *form
     
     
     NSString *strErrorLevel = [[NSString alloc] init];
-    switch (ulErrorLevel) {
+    switch (ulErrorLevel)
+    {
         case ERR_LOG:
             strErrorLevel = @"Error";
             break;
@@ -230,6 +231,7 @@ void WriteLog(int ulErrorLevel, const char *func, int lineNumber, NSString *form
             break;
         case INFO_LOG:
             strErrorLevel = @"Info";
+            [Logger printfInfoWithClassName:className andMethodName:methodName];
             break;
         case OPERATE_LOG:
             strErrorLevel = @"Operate";
@@ -240,23 +242,32 @@ void WriteLog(int ulErrorLevel, const char *func, int lineNumber, NSString *form
         default:
             break;
     }
-    NSLog(@"\n类名：%@ \n方法名：%@\n行数：%d \n类型：%@ \n输出：%@ \nappName：%@\n",className,methodName,lineNumber,strErrorLevel,string,[LogPoint getAppName]);
+//    NSLog(@"\n类名：%@ \n方法名：%@\n行数：%d \n类型：%@ \n输出：%@ \nappName：%@\n",className,methodName,lineNumber,strErrorLevel,string,[LogPoint getAppName]);
 }
 
 
-void InfoLog(const char *func,NSString *eventID,NSString *eventDesc,NSString *eventContent,NSString *eventClass,NSString *userID,NSString *format, ...)
+
++(void)printfInfoWithClassName:(NSString *)className andMethodName:(NSString*)methodName
 {
+    NSString *eventContentString = [NSString stringWithFormat:@"%@+%@+%@",[LogPoint getAppName],className,methodName];
     
+    
+    //    NSString *userID = GET_USER(@"userID");
+    NSString *userID = @"admin";
+    
+    NSLog(@"<log type =\"info\"><eventID></eventID><eventDesc></eventDesc><eventContent>%@/eventClass><userID>%@</userID></log>",eventContentString,userID);
 }
 
-void OperateLog(const char *func,NSString *eventID,NSString *eventDesc,NSString *eventContent,NSString *eventClass,NSString *userID,NSString *eventStart,NSString *eventEnd,NSString *format, ...)
+
+
++(void)printfOpertaionWithClassName:(NSString *)className andMethodName:(NSString*)methodName andString:(NSString *)string
 {
-    
+
+    //    NSString *userID = GET_USER(@"userID");
+    NSString *userID = @"admin";
+    NSLog(@"<log type=\"opertaion\"><eventID></eventID><eventDesc></eventDesc><userID>%@</userID><eventStart></eventStart><eventEnd></eventEnd><IP></IP><netstate>%@</netstate></log>",userID,[LogPoint getNetType]);
 }
 
-void ErrorLog(const char *func, NSString *eventID,NSString *eventDesc,NSString *eventContent,NSString *format, ...)
-{
-    
-}
+
 
 @end
