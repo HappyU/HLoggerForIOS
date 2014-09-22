@@ -21,8 +21,6 @@
 		3A7D5EBA19C8237300CC1ABA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A7D5EA219C8237300CC1ABA /* UIKit.framework */; };
 		3A7D5EC219C8237300CC1ABA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3A7D5EC019C8237300CC1ABA /* InfoPlist.strings */; };
 		3A7D5EC419C8237300CC1ABA /* HLoggerForIOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A7D5EC319C8237300CC1ABA /* HLoggerForIOSTests.m */; };
-		3A7D5ED019C8252E00CC1ABA /* LogPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A7D5ECF19C8252E00CC1ABA /* LogPoint.m */; };
-		3AA46BBB19C9667300C2EA01 /* HLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AA46BBA19C9667300C2EA01 /* HLog.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,10 +53,6 @@
 		3A7D5EBF19C8237300CC1ABA /* HLoggerForIOSTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HLoggerForIOSTests-Info.plist"; sourceTree = "<group>"; };
 		3A7D5EC119C8237300CC1ABA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3A7D5EC319C8237300CC1ABA /* HLoggerForIOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HLoggerForIOSTests.m; sourceTree = "<group>"; };
-		3A7D5ECE19C8252E00CC1ABA /* LogPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogPoint.h; sourceTree = "<group>"; };
-		3A7D5ECF19C8252E00CC1ABA /* LogPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogPoint.m; sourceTree = "<group>"; };
-		3AA46BB919C9667300C2EA01 /* HLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLog.h; sourceTree = "<group>"; };
-		3AA46BBA19C9667300C2EA01 /* HLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLog.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,10 +154,6 @@
 			isa = PBXGroup;
 			children = (
 				187C7FB819C983CC00CABBCD /* log.plist */,
-				3A7D5ECE19C8252E00CC1ABA /* LogPoint.h */,
-				3A7D5ECF19C8252E00CC1ABA /* LogPoint.m */,
-				3AA46BB919C9667300C2EA01 /* HLog.h */,
-				3AA46BBA19C9667300C2EA01 /* HLog.m */,
 				3A5ABAAD19CACB6E000EE015 /* Logger.h */,
 				3A5ABAAE19CACB6E000EE015 /* Logger.m */,
 			);
@@ -268,9 +258,7 @@
 			files = (
 				3A7D5EAF19C8237300CC1ABA /* AppDelegate.m in Sources */,
 				3A5ABAAF19CACB6E000EE015 /* Logger.m in Sources */,
-				3A7D5ED019C8252E00CC1ABA /* LogPoint.m in Sources */,
 				3A7D5EAB19C8237300CC1ABA /* main.m in Sources */,
-				3AA46BBB19C9667300C2EA01 /* HLog.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

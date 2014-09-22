@@ -14,10 +14,10 @@
 #define NOTICE_LOG 3 /* 日常运行提示信息，比如登录、退出日志 */
 #define DEBUG_LOG 4 /* 调试信息，打印比较频繁，打印内容较多的日志 */
 
-#define LOGERR(format,...) WriteLog(ERR_LOG,__FUNCTION__,__LINE__,format,##__VA_ARGS__)
-#define LOGWARN(format,...) WriteLog(WARN_LOG,__FUNCTION__,__LINE__,format,##__VA_ARGS__)
-#define LOGNOTICE(format,...) WriteLog(NOTICE_LOG,__FUNCTION__,__LINE__,format,##__VA_ARGS__)
-#define LOGDEBUG(format,...) WriteLog(DEBUG_LOG,__FUNCTION__,__LINE__,format,##__VA_ARGS__)
+#define HLOGERR(format,...) WriteLog(ERR_LOG,__FUNCTION__,__LINE__,format,##__VA_ARGS__)
+#define HLOGWARN(format,...) WriteLog(WARN_LOG,__FUNCTION__,__LINE__,format,##__VA_ARGS__)
+#define HLOGNOTICE(format,...) WriteLog(NOTICE_LOG,__FUNCTION__,__LINE__,format,##__VA_ARGS__)
+#define HLOGDEBUG(format,...) WriteLog(DEBUG_LOG,__FUNCTION__,__LINE__,format,##__VA_ARGS__)
 
 void WriteLog(int ulErrorLevel, const char *func, int lineNumber, NSString *format, ...);
 
