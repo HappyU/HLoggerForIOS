@@ -197,7 +197,7 @@
 
 
 
-void WriteLog(int ulErrorLevel, const char *func, int lineNumber, NSString *format, ...)
+void WriteLog(int ulErrorLevel,const char *func, int lineNumber, NSString *format, ...)
 {
     va_list args;
     va_start(args, format);
@@ -226,6 +226,7 @@ void WriteLog(int ulErrorLevel, const char *func, int lineNumber, NSString *form
         case ERR_LOG:
             strErrorLevel = @"Error";
             [Logger printfErrorWithString:string];
+          
             break;
         case WARN_LOG:
             strErrorLevel = @"Warning";
@@ -243,7 +244,7 @@ void WriteLog(int ulErrorLevel, const char *func, int lineNumber, NSString *form
         default:
             break;
     }
-//    NSLog(@"\n类名：%@ \n方法名：%@\n行数：%d \n类型：%@ \n输出：%@ \nappName：%@\n",className,methodName,lineNumber,strErrorLevel,string,[LogPoint getAppName]);
+
 }
 
 
@@ -255,8 +256,12 @@ void WriteLog(int ulErrorLevel, const char *func, int lineNumber, NSString *form
     
     //    NSString *userID = GET_USER(@"userID");
     NSString *userID = @"admin";
-    
-    NSLog(@"<log type =\"info\"><eventID></eventID><eventDesc></eventDesc><eventContent>%@/eventClass><userID>%@</userID></log>",eventContentString,userID);
+
+    if(LOG_LEVEL == LEVEL_INFO || LOG_LEVEL == LEVEL_DEBUG || LOG_LEVEL == LEVEL_OPERATE)
+    {
+         NSLog(@"<log type =\"info\"><eventID></eventID><eventDesc></eventDesc><eventContent>%@/eventClass><userID>%@</userID></log>",eventContentString,userID);
+    }
+   
 }
 
 
@@ -264,14 +269,19 @@ void WriteLog(int ulErrorLevel, const char *func, int lineNumber, NSString *form
 +(void)printfOpertaionWithClassName:(NSString *)className andMethodName:(NSString*)methodName andString:(NSString *)string
 {
 
-    //    NSString *userID = GET_USER(@"userID");
-    NSString *userID = @"admin";
-    NSLog(@"<log type=\"opertaion\"><eventID></eventID><eventDesc></eventDesc><userID>%@</userID><eventStart></eventStart><eventEnd></eventEnd><IP></IP><netstate>%@</netstate></log>",userID,[LogPoint getNetType]);
+    if(LOG_LEVEL == LEVEL_INFO || LOG_LEVEL == LEVEL_DEBUG || LOG_LEVEL == LEVEL_OPERATE )
+    {
+        //    NSString *userID = GET_USER(@"userID");
+        NSString *userID = @"admin";
+        NSLog(@"<log type=\"opertaion\"><eventID></eventID><eventDesc></eventDesc><userID>%@</userID><eventStart></eventStart><eventEnd></eventEnd><IP></IP><netstate>%@</netstate></log>",userID,[LogPoint getNetType]);
+    }
+    
 }
 
 
 +(void)printfErrorWithString:(NSString *)string
 {
+   
     NSLog(@"<log type=\"error\"><eventID></eventID><eventDesc></eventDesc><eventContent>%@</eventContent></log>",string);
 }
 
