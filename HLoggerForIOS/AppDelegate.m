@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "Logger.h"
+#import "LogFile.h"
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -17,6 +18,9 @@
 
     
     HLOGINFO(@"3333%@,%@",@"ddddsf",@"mmmmm");
+    
+    LogFile *logFile = [[LogFile alloc] init];
+    [logFile createLogFile];
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];

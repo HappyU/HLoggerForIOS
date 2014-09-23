@@ -30,7 +30,7 @@ typedef NS_ENUM(NSInteger, Type) {
 @implementation LogFile
 
 //获取存放路径（Doc，Cache，Temp）
--(NSString *)getCachePath
+-(NSString *)getFolderPath
 {
     NSString *path = @"";
     if (LOG_PATH == TypeDoc)
@@ -60,7 +60,7 @@ typedef NS_ENUM(NSInteger, Type) {
 -(BOOL)validityDate:(NSString *)fileName
 {
     NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSDirectoryEnumerator *dir = [fileManager enumeratorAtPath:[self getCachePath]];
+    NSDirectoryEnumerator *dir = [fileManager enumeratorAtPath:[self getFolderPath]];
     NSString *file;
     while (file = [dir nextObject]) {
 
@@ -74,6 +74,29 @@ typedef NS_ENUM(NSInteger, Type) {
     return NO;
 }
 
+//创建日志文件
+-(void)createLogFile
+{
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSString *logName = [self createLogName];
+    NSString *path = [self getFolderPath];
+    NSString *filePath = [path stringByAppendingPathComponent:logName];
+    if (![fileManager fileExistsAtPath:filePath])
+    {
+        [fileManager createFileAtPath:filePath contents:nil attributes:nil];
+    }
+}
+
+//创建日志名称
+-(NSString *)createLogName
+{
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init] ;
+    [formatter setDateFormat:@"YYYYMMdd_HH:mm:ss"];
+    NSString *stringDate = [formatter stringFromDate:[NSDate date]];
+    stringDate = [NSString stringWithFormat:@"log%@.txt",stringDate];
+    return stringDate;
+}
+
 //验证文件大小
 -(void)validitySize:(NSString *)fileName
 {
@@ -82,7 +105,7 @@ typedef NS_ENUM(NSInteger, Type) {
 
 -(void)readSetInfo
 {
-    NSString *cachePath = [self getCachePath];
+    NSString *cachePath = [self getFolderPath];
 }
 
 //文件是否存在
