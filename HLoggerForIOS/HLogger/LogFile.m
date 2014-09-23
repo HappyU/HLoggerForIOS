@@ -9,22 +9,22 @@
 #import "LogFile.h"
 
 
-typedef NS_ENUM(NSInteger, Type) {
-    TypeDoc = 0,
-    TypeCache = 1,
-    TypeTemp = 2
-};
+
+
+
 
 //0=doc  1=cache  2=temp
 #define LOG_PATH 0
-//文件失效时间设置
-#define FILE_VALIDITY_DATE
 //文件大小设置
 #define FILE_VALIDITY_SIZE
 //文件输出级别设置
 #define LOG_LEVEL 
 
+//文件产生策略 1=每天生成，
+#define LOG_TACTICS 0
+//文件上传策略
 
+#define LOG_CUR_PATH @"savePath"
 
 
 @implementation LogFile
@@ -56,25 +56,6 @@ typedef NS_ENUM(NSInteger, Type) {
     return path;
 }
 
-//验证文件有效时间
--(BOOL)validityDate:(NSString *)fileName
-{
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSDirectoryEnumerator *dir = [fileManager enumeratorAtPath:[self getFolderPath]];
-    NSString *file;
-    while (file = [dir nextObject]) {
-
-        NSLog(@"%@",file);
-//        if ([[file lastPathComponent] isEqualToString:fileName] )
-//        {
-//            
-//        }
-    }
-    
-    return NO;
-}
-
-
 //创建日志文件
 -(void)createLogFile
 {
@@ -85,8 +66,34 @@ typedef NS_ENUM(NSInteger, Type) {
     if(!(isDir == YES && existed == YES))
     {
         [fileManager createDirectoryAtPath:[self getFolderPath] withIntermediateDirectories:YES attributes:nil error:nil];
+
+
+        NSString *logPath = [self readLogPath];
+        if (logPath == nil || [logPath isEqualToString:@""])
+        {
+            [self createFile];
+        }
+        else
+        {
+            if (LOG_TACTICS == TacticsDay)
+            {
+                NSDateFormatter *formatter = [[NSDateFormatter alloc] init] ;
+                [formatter setDateFormat:@"YYYYMMdd"];
+                NSString *curDate = [formatter stringFromDate:[NSDate date]];
+                NSString *logDate = [logPath substringToIndex:[logPath rangeOfString:@"_"].location];
+                if (![curDate isEqualToString:logDate])
+                {
+                    [self createFile];
+                }
+            }
+        }
     }
-    
+}
+
+//创建文件
+-(void)createFile
+{
+    NSFileManager *fileManager = [NSFileManager defaultManager];
     NSString *logName = [self createLogName];
     NSString *path = [self getFolderPath];
     NSString *filePath = [path stringByAppendingPathComponent:logName];
@@ -95,7 +102,7 @@ typedef NS_ENUM(NSInteger, Type) {
         BOOL isCreate = [fileManager createFileAtPath:filePath contents:nil attributes:nil];
         if (isCreate)
         {
-            NSLog(@"333");
+            [self writeLogPath:filePath];
         }
     }
 }
@@ -106,7 +113,7 @@ typedef NS_ENUM(NSInteger, Type) {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init] ;
     [formatter setDateFormat:@"YYYYMMdd_HHmmss"];
     NSString *stringDate = [formatter stringFromDate:[NSDate date]];
-    stringDate = [NSString stringWithFormat:@"log%@.txt",stringDate];
+    stringDate = [NSString stringWithFormat:@"%@.log",stringDate];
     return stringDate;
 }
 
@@ -116,14 +123,38 @@ typedef NS_ENUM(NSInteger, Type) {
     
 }
 
-
-//文件是否存在
--(BOOL)isExistFile:(NSString *)fileName
+//往文件中插入内容
+-(void)writeContent:(NSData *)contentData withLocation:(Location) location
 {
-    
-    return NO;
+    NSString *logPath = [self readLogPath];
+    NSFileHandle *writeFile = [NSFileHandle fileHandleForWritingAtPath:logPath];
+    if (location == LocationBegin)
+    {
+        [writeFile seekToFileOffset:0];
+    }
+    else
+    {
+        [writeFile seekToEndOfFile];
+    }
+    [writeFile writeData:contentData];
+    [writeFile closeFile];
 }
 
+//读取日志的路径信息
+-(NSString *)readLogPath
+{
+    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+    NSString *logPath = [userDefault objectForKey:LOG_CUR_PATH];
+    return logPath;
+}
+
+//写入日志的路径信息
+-(void)writeLogPath:(NSString *)filePath
+{
+    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+    [userDefault setObject:filePath forKey:LOG_CUR_PATH];
+    [userDefault synchronize];
+}
 
 
 @end
