@@ -93,8 +93,8 @@
             NSDateFormatter *formatter = [[NSDateFormatter alloc] init] ;
             [formatter setDateFormat:@"YYYYMMdd"];
             NSString *curDate = [formatter stringFromDate:[NSDate date]];
-            NSString *fileName = [logPath substringFromIndex:[logPath rangeOfString:@"/" options:NSBackwardsSearch].location+1];
-            NSString *logDate = [fileName substringToIndex:[fileName rangeOfString:@"_"].location ];
+//            NSString *fileName = [logPath substringFromIndex:[logPath rangeOfString:@"/" options:NSBackwardsSearch].location+1];
+            NSString *logDate = [logPath substringToIndex:[logPath rangeOfString:@"_"].location ];
             if (![curDate isEqualToString:logDate])
             {
                 [self createFile];
@@ -115,7 +115,7 @@
         BOOL isCreate = [fileManager createFileAtPath:filePath contents:nil attributes:nil];
         if (isCreate)
         {
-            [self writeLogPath:filePath];
+            [self writeLogPath:logName];
         }
     }
 }
@@ -139,24 +139,22 @@
 //往文件中插入内容
 -(void)writeContent:(NSMutableData *)contentData withLocation:(Location) location
 {
-    NSString *logPath = [self readLogPath];
-    NSFileHandle *writeFile = [NSFileHandle fileHandleForWritingAtPath:logPath];
+    NSString *logPath =[[self getFolderPath] stringByAppendingPathComponent:[self readLogPath]];
+    NSFileHandle *updateFile = [NSFileHandle fileHandleForUpdatingAtPath:logPath];
     if (location == LocationBegin)
     {
-        [writeFile seekToFileOffset:0];
-        NSData *logData = [writeFile readDataToEndOfFile];
+        [updateFile seekToFileOffset:0];
+        NSData *logData = [updateFile readDataToEndOfFile];
         [contentData appendData:logData];
-        
-//        [writeFile offsetInFile];
     }
     else
     {
-        [writeFile seekToEndOfFile];
+        [updateFile seekToEndOfFile];
     }
-    [writeFile writeData:contentData];
-    [writeFile synchronizeFile];
-    [writeFile closeFile];
-    writeFile = nil;
+    [updateFile writeData:contentData];
+    [updateFile synchronizeFile];
+    [updateFile closeFile];
+    updateFile = nil;
 }
 
 //读取日志的路径信息
