@@ -248,7 +248,12 @@ void WriteLog(int ulErrorLevel,const char *func, int lineNumber, NSString *forma
 }
 
 
-
+/**
+ *  打印info信息
+ *
+ *  @param className  类名
+ *  @param methodName 方法名
+ */
 +(void)printfInfoWithClassName:(NSString *)className andMethodName:(NSString*)methodName
 {
     NSString *eventContentString = [NSString stringWithFormat:@"%@+%@+%@",[LogPoint getAppName],className,methodName];
@@ -265,7 +270,12 @@ void WriteLog(int ulErrorLevel,const char *func, int lineNumber, NSString *forma
 }
 
 
-
+/**
+ *  打印Opertaion信息
+ *
+ *  @param className  类名
+ *  @param methodName 方法名
+ */
 +(void)printfOpertaionWithClassName:(NSString *)className andMethodName:(NSString*)methodName andString:(NSString *)string
 {
 
@@ -279,6 +289,13 @@ void WriteLog(int ulErrorLevel,const char *func, int lineNumber, NSString *forma
 }
 
 
+
+/**
+ *  打印Error信息
+ *
+ *  @param className  类名
+ *  @param methodName 方法名
+ */
 +(void)printfErrorWithString:(NSString *)string
 {
    
