@@ -28,6 +28,9 @@
 
 
 @implementation LogFile
+{
+    NSFileHandle *_fileHandle;
+}
 
 //单例
 +(LogFile *)getInstance
@@ -38,6 +41,25 @@
         logFile = [[self alloc] init];
     });
     return logFile;
+}
+
+//初始化方法
+-(id)init
+{
+    self = [super init];
+    if (self)
+    {
+        
+    }
+    return self;
+}
+
+-(void)allocFileHandle
+{
+    if (_fileHandle == nil)
+    {
+        _fileHandle = [NSFileHandle fileHandleForUpdatingAtPath:@""];
+    }
 }
 
 
@@ -78,7 +100,6 @@
     if(!(isDir == YES && existed == YES))
     {
         [fileManager createDirectoryAtPath:[self getFolderPath] withIntermediateDirectories:YES attributes:nil error:nil];
-        [self writeLogPath:@""];
     }
     
     NSString *logPath = [self readLogPath];
@@ -116,6 +137,7 @@
         if (isCreate)
         {
             [self writeLogPath:logName];
+            _fileHandle = [NSFileHandle fileHandleForUpdatingAtPath:filePath];
         }
     }
 }
