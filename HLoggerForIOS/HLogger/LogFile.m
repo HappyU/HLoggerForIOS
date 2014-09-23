@@ -143,9 +143,9 @@
     NSFileHandle *updateFile = [NSFileHandle fileHandleForUpdatingAtPath:logPath];
     if (location == LocationBegin)
     {
-        [updateFile seekToFileOffset:0];
-        NSData *logData = [updateFile readDataToEndOfFile];
+        NSData *logData = [updateFile availableData];
         [contentData appendData:logData];
+        [updateFile seekToFileOffset:0];
     }
     else
     {

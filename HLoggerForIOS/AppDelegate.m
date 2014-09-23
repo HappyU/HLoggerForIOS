@@ -42,7 +42,7 @@ const int32_t _uncaughtExceptionMaximum = 10;
     [logFile createLogFile];
     
     
-    NSData *abc = [@"xxxx--" dataUsingEncoding:NSUTF8StringEncoding];
+    NSData *abc = [@"456" dataUsingEncoding:NSUTF8StringEncoding];
 //    NSMutableData *data = [[NSMutableData alloc]initWithData:abc];
     NSMutableData *data = [NSMutableData dataWithData:abc];
     [logFile writeContent:data withLocation:LocationBegin];
