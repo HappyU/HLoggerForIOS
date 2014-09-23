@@ -74,16 +74,29 @@ typedef NS_ENUM(NSInteger, Type) {
     return NO;
 }
 
+
 //创建日志文件
 -(void)createLogFile
 {
     NSFileManager *fileManager = [NSFileManager defaultManager];
+    
+    BOOL isDir = NO;
+    BOOL existed = [fileManager fileExistsAtPath:[self getFolderPath] isDirectory:&isDir];
+    if(!(isDir == YES && existed == YES))
+    {
+        [fileManager createDirectoryAtPath:[self getFolderPath] withIntermediateDirectories:YES attributes:nil error:nil];
+    }
+    
     NSString *logName = [self createLogName];
     NSString *path = [self getFolderPath];
     NSString *filePath = [path stringByAppendingPathComponent:logName];
     if (![fileManager fileExistsAtPath:filePath])
     {
-        [fileManager createFileAtPath:filePath contents:nil attributes:nil];
+        BOOL isCreate = [fileManager createFileAtPath:filePath contents:nil attributes:nil];
+        if (isCreate)
+        {
+            NSLog(@"333");
+        }
     }
 }
 
@@ -91,7 +104,7 @@ typedef NS_ENUM(NSInteger, Type) {
 -(NSString *)createLogName
 {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init] ;
-    [formatter setDateFormat:@"YYYYMMdd_HH:mm:ss"];
+    [formatter setDateFormat:@"YYYYMMdd_HHmmss"];
     NSString *stringDate = [formatter stringFromDate:[NSDate date]];
     stringDate = [NSString stringWithFormat:@"log%@.txt",stringDate];
     return stringDate;
@@ -103,10 +116,6 @@ typedef NS_ENUM(NSInteger, Type) {
     
 }
 
--(void)readSetInfo
-{
-    NSString *cachePath = [self getFolderPath];
-}
 
 //文件是否存在
 -(BOOL)isExistFile:(NSString *)fileName
