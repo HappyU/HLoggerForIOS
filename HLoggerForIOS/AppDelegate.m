@@ -42,14 +42,11 @@ const int32_t _uncaughtExceptionMaximum = 10;
     [logFile createLogFile];
     
     
-    
-    NSData *data = [@"1234" dataUsingEncoding:NSUTF8StringEncoding];
-    
-    NSMutableData *data1 = [[NSMutableData alloc]init];
-    
-    [data1 setData:data];
-    
-    [logFile writeContent:data1 withLocation:LocationBegin];
+    NSData *abc = [@"xxxx--" dataUsingEncoding:NSUTF8StringEncoding];
+//    NSMutableData *data = [[NSMutableData alloc]initWithData:abc];
+    NSMutableData *data = [NSMutableData dataWithData:abc];
+    [logFile writeContent:data withLocation:LocationBegin];
+
 
     
     self.window.backgroundColor = [UIColor whiteColor];

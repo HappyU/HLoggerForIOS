@@ -23,6 +23,9 @@ typedef NS_ENUM(NSInteger, Tactics){
 
 @interface LogFile : NSObject
 
+//单例
++(LogFile *)getInstance;
+
 //创建日志文件
 -(void)createLogFile;
 

@@ -29,6 +29,18 @@
 
 @implementation LogFile
 
+//单例
++(LogFile *)getInstance
+{
+    static LogFile *logFile;
+    static dispatch_once_t once;
+    dispatch_once(&once,^{
+        logFile = [[self alloc] init];
+    });
+    return logFile;
+}
+
+
 //获取存放路径（Doc，Cache，Temp）
 -(NSString *)getFolderPath
 {
@@ -66,25 +78,26 @@
     if(!(isDir == YES && existed == YES))
     {
         [fileManager createDirectoryAtPath:[self getFolderPath] withIntermediateDirectories:YES attributes:nil error:nil];
-
-
-        NSString *logPath = [self readLogPath];
-        if (logPath == nil || [logPath isEqualToString:@""])
+        [self writeLogPath:@""];
+    }
+    
+    NSString *logPath = [self readLogPath];
+    if (logPath == nil || [logPath isEqualToString:@""])
+    {
+        [self createFile];
+    }
+    else
+    {
+        if (LOG_TACTICS == TacticsDay)
         {
-            [self createFile];
-        }
-        else
-        {
-            if (LOG_TACTICS == TacticsDay)
+            NSDateFormatter *formatter = [[NSDateFormatter alloc] init] ;
+            [formatter setDateFormat:@"YYYYMMdd"];
+            NSString *curDate = [formatter stringFromDate:[NSDate date]];
+            NSString *fileName = [logPath substringFromIndex:[logPath rangeOfString:@"/" options:NSBackwardsSearch].location+1];
+            NSString *logDate = [fileName substringToIndex:[fileName rangeOfString:@"_"].location ];
+            if (![curDate isEqualToString:logDate])
             {
-                NSDateFormatter *formatter = [[NSDateFormatter alloc] init] ;
-                [formatter setDateFormat:@"YYYYMMdd"];
-                NSString *curDate = [formatter stringFromDate:[NSDate date]];
-                NSString *logDate = [logPath substringToIndex:[logPath rangeOfString:@"_"].location];
-                if (![curDate isEqualToString:logDate])
-                {
-                    [self createFile];
-                }
+                [self createFile];
             }
         }
     }
