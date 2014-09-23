@@ -32,7 +32,9 @@ const int32_t _uncaughtExceptionMaximum = 10;
     
     HLOGINFO(@"3333%@,%@",@"ddddsf",@"mmmmm");
     
-
+    const char *func = __FUNCTION__;
+    NSString *classAndMethodStr = [NSString stringWithFormat:@"%s",func];
+    NSLog(@"classAndMethod = %@",classAndMethodStr);
     
     NSArray *arr = [NSArray arrayWithObject:@"11"];
     

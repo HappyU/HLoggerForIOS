@@ -15,26 +15,6 @@
 #define OPERATE_LOG 4/* 用户的操作轨迹信息，比如开始时间，结束时间 */
 #define DEBUG_LOG 5 /* 调试信息，打印比较频繁，打印内容较多的日志 */
 
-
-
-
-//#define LOG_LEVEL_ERROR   (ERR_LOG)
-//#define LOG_LEVEL_WARN    (ERR_LOG | WARN_LOG)
-//#define LOG_LEVEL_INFO    (ERR_LOG | WARN_LOG | INFO_LOG)
-//#define LOG_LEVEL_DEBUG   (ERR_LOG | WARN_LOG | INFO_LOG | DEBUG_LOG |OPERATE_LOG)
-//#define LOG_LEVEL_OPERATE (ERR_LOG | WARN_LOG | OPERATE_LOG | INFO_LOG)
-
-
-
-//typedef NS_ENUM(NSInteger, Level) {
-//    LEVEL_ERROR = 0,
-//    LEVEL_WARN = 1,
-//    LEVEL_INFO  = 2,
-//    LEVEL_OPERATE  = 3,
-//    LEVEL_DEBUG  = 4
-//    
-//};
-
 //0=error  1=warn  2=info 3=debug 4=opeate
 #define LOG_LEVEL OPERATE_LOG
 
@@ -47,21 +27,15 @@
 
 void WriteLog(int level, const char *func, int lineNumber, NSString *format, ...);
 
-//void InfoLog(const char *func,NSString *format, ...);
-//
-//#define LOGINFO(format,...) InfoLog(__FUNCTION__,format);
+#define L_SDATE @"startDate"
+#define L_EDATE @"endDate"
+#define L_LEVEL @"level"
 
-
-#define SAVE_USER(dic) \
-NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];\
-for (id str in dic.allKeys){\
-[userDefault setObject:[dic objectForKey:str] forKey:str];\
-}\
-[userDefault synchronize];
-
-#define GET_USER(key) [[NSUserDefaults standardUserDefaults] objectForKey:key]
+#define F_ERROR
 
 
 @interface Logger : NSObject
+
++(void)addLogger:(NSDictionary *)dic;
 
 @end
