@@ -22,8 +22,7 @@
 
     LogFile *logFile = [[LogFile alloc] init];
     [logFile createLogFile];
->>>>>>> FETCH_HEAD
-    
+
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
