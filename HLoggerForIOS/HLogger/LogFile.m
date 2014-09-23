@@ -124,20 +124,26 @@
 }
 
 //往文件中插入内容
--(void)writeContent:(NSData *)contentData withLocation:(Location) location
+-(void)writeContent:(NSMutableData *)contentData withLocation:(Location) location
 {
     NSString *logPath = [self readLogPath];
     NSFileHandle *writeFile = [NSFileHandle fileHandleForWritingAtPath:logPath];
     if (location == LocationBegin)
     {
         [writeFile seekToFileOffset:0];
+        NSData *logData = [writeFile readDataToEndOfFile];
+        [contentData appendData:logData];
+        
+//        [writeFile offsetInFile];
     }
     else
     {
         [writeFile seekToEndOfFile];
     }
     [writeFile writeData:contentData];
+    [writeFile synchronizeFile];
     [writeFile closeFile];
+    writeFile = nil;
 }
 
 //读取日志的路径信息

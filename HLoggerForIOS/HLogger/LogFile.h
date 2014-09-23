@@ -27,6 +27,6 @@ typedef NS_ENUM(NSInteger, Tactics){
 -(void)createLogFile;
 
 //往文件中插入内容
--(void)writeContent:(NSData *)contentData withLocation:(Location) location;
+-(void)writeContent:(NSMutableData *)contentData withLocation:(Location) location;
 
 @end
