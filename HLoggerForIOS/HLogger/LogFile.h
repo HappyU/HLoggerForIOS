@@ -9,4 +9,7 @@
 
 @interface LogFile : NSObject
 
+//创建日志文件
+-(void)createLogFile;
+
 @end
