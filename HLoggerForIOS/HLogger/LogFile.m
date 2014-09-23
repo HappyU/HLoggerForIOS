@@ -29,6 +29,18 @@
 
 @implementation LogFile
 
+//单例
++(LogFile *)getInstance
+{
+    static LogFile *logFile;
+    static dispatch_once_t once;
+    dispatch_once(&once,^{
+        logFile = [[self alloc] init];
+    });
+    return logFile;
+}
+
+
 //获取存放路径（Doc，Cache，Temp）
 -(NSString *)getFolderPath
 {
