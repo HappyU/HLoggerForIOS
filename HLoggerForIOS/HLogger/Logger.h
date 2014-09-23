@@ -26,17 +26,17 @@
 
 
 
-typedef NS_ENUM(NSInteger, Level) {
-    LEVEL_ERROR = 0,
-    LEVEL_WARN = 1,
-    LEVEL_INFO  = 2,
-    LEVEL_OPERATE  = 3,
-    LEVEL_DEBUG  = 4
-    
-};
+//typedef NS_ENUM(NSInteger, Level) {
+//    LEVEL_ERROR = 0,
+//    LEVEL_WARN = 1,
+//    LEVEL_INFO  = 2,
+//    LEVEL_OPERATE  = 3,
+//    LEVEL_DEBUG  = 4
+//    
+//};
 
 //0=error  1=warn  2=info 3=debug 4=opeate
-#define LOG_LEVEL 4
+#define LOG_LEVEL OPERATE_LOG
 
 
 #define HLOGERR(format,...) WriteLog(ERR_LOG,__FUNCTION__,__LINE__,format,##__VA_ARGS__)
@@ -45,7 +45,7 @@ typedef NS_ENUM(NSInteger, Level) {
 #define HLOGOPERATE(format,...) WriteLog(OPERATE_LOG,__FUNCTION__,__LINE__,format,##__VA_ARGS__)
 #define HLOGDEBUG(format,...) WriteLog(DEBUG_LOG,__FUNCTION__,__LINE__,format,##__VA_ARGS__)
 
-void WriteLog(int ulErrorLevel, const char *func, int lineNumber, NSString *format, ...);
+void WriteLog(int level, const char *func, int lineNumber, NSString *format, ...);
 
 //void InfoLog(const char *func,NSString *format, ...);
 //

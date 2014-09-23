@@ -34,9 +34,9 @@ const int32_t _uncaughtExceptionMaximum = 10;
     
 
     
-//    NSArray *arr = [NSArray arrayWithObject:@"11"];
-//    
-//    NSString *aa = [arr objectAtIndex:10];
+    NSArray *arr = [NSArray arrayWithObject:@"11"];
+    
+    NSString *aa = [arr objectAtIndex:10];
 
     LogFile *logFile = [[LogFile alloc] init];
     [logFile createLogFile];
