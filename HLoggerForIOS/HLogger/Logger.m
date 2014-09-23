@@ -237,7 +237,6 @@ void WriteLog(int level,const char *func, int lineNumber, NSString *format, ...)
             [Logger printfOpertaionWithClassName:className andMethodName:methodName andString:nil];
             break;
         case DEBUG_LOG:
-            strErrorLevel = @"Debug";
             break;
         default:
             break;
