@@ -271,16 +271,8 @@ void WriteLog(int level,const char *func, int lineNumber, NSString *format, ...)
  */
 +(void)printfOpertaionWithClassName:(NSString *)className andMethodName:(NSString*)methodName andString:(NSString *)string
 {
-
-//    if(LOG_LEVEL == LEVEL_INFO || LOG_LEVEL == LEVEL_DEBUG || LOG_LEVEL == LEVEL_OPERATE )
-//    {
-//        //    NSString *userID = GET_USER(@"userID");
-//        NSString *userID = @"admin";
-//        NSLog(@"<log type=\"opertaion\"><eventID></eventID><eventDesc></eventDesc><userID>%@</userID><eventStart></eventStart><eventEnd></eventEnd><IP></IP><netstate>%@</netstate></log>",userID,[LogPoint getNetType]);
-//    }
     NSString *userID = @"admin";
-    NSLog(@"operate,%@,%@,%@,%@,%@,%@",userID,userID,userID,userID,userID,userID);
-    
+    NSLog(@"operate,%@,%@,%@,%@,%@,%@\n",userID,userID,userID,userID,userID,userID);
 }
 
 
