@@ -16,7 +16,7 @@
 //0=doc  1=cache  2=temp
 #define LOG_PATH 0
 //文件大小设置
-#define LOG_SIZE 1000
+#define LOG_SIZE 30
 //文件输出级别设置
 #define LOG_LEVEL 
 

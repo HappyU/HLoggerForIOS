@@ -39,7 +39,12 @@ LogFile *logFile;
 //    NSLog(@"classAndMethod = %@",classAndMethodStr);
     
 
-
+    
+    NSArray *arr = [NSArray arrayWithObjects:[NSString stringWithFormat:@"%d",INFO_LOG],@"001",@"点击",@"123",@"方法名", @"admin",nil];
+    
+    NSDictionary *dic = [[NSDictionary alloc]initWithObjects:arr forKeys:F_INFO];
+    
+    [Logger addLogger:dic];
 
     logFile = [[LogFile alloc] init];
     [logFile createLogFile];
