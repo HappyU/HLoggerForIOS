@@ -27,12 +27,21 @@
 
 void WriteLog(int level, const char *func, int lineNumber, NSString *format, ...);
 
-#define L_SDATE @"startDate"
-#define L_EDATE @"endDate"
 #define L_LEVEL @"level"
+#define L_START @"eventStart"
+#define L_END @"eventEnd"
+#define L_IP @"IP"
+#define L_USREID @"userID"
+#define L_NETSTATE @"netstate"
+#define L_EVENTID @"eventID"
+#define L_EVENTCLASS @"eventClass"
+#define L_EVENTCONTENT @"eventContent"
+#define L_EVENTDESC @"eventDesc"
 
-#define F_ERROR
 
+#define F_ERROR @[L_LEVEL,L_EVENTID,L_EVENTDESC,L_EVENTCONTENT]
+#define F_INFO @[L_LEVEL,L_EVENTID,L_EVENTDESC,L_EVENTCONTENT,L_EVENTCLASS,L_USREID]
+#define F_OPERATE @[L_LEVEL,L_EVENTID,L_EVENTDESC,L_USREID,L_START,L_END,L_IP,L_NETSTATE]
 
 @interface Logger : NSObject
 
