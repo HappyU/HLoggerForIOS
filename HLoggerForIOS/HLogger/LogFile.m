@@ -166,6 +166,7 @@
 //往文件中插入内容
 -(void)writeContent:(NSMutableData *)contentData withLocation:(Location) location
 {
+    
     NSString *logPath =[[self getFolderPath] stringByAppendingPathComponent:[self readLogPath]];
     _fileHandle = [NSFileHandle fileHandleForUpdatingAtPath:logPath];
     if (location == LocationBegin)
@@ -184,8 +185,11 @@
 //往文件中插入内容
 -(void)writeContent:(NSMutableData *)contentData withLocation:(Location) location withOverSize:(packageInfo)packageBlock
 {
-    [self writeContent:contentData withLocation:location];
-    [self validitySize:packageBlock];
+    dispatch_queue_t globalLogQueue = dispatch_queue_create("com.happyu.hlogger", NULL);
+    dispatch_async(globalLogQueue, ^{
+        [self writeContent:contentData withLocation:location];
+        [self validitySize:packageBlock];
+    });   
 }
 
 //读取日志的路径信息
