@@ -16,7 +16,7 @@
 #define DEBUG_LOG 5 /* 调试信息，打印比较频繁，打印内容较多的日志 */
 
 //0=error  1=warn  2=info 3=debug 4=opeate
-#define LOG_LEVEL OPERATE_LOG
+#define LOG_LEVEL INFO_LOG
 
 
 #define HLOGERR(format,...) WriteLog(ERR_LOG,__FUNCTION__,__LINE__,format,##__VA_ARGS__)

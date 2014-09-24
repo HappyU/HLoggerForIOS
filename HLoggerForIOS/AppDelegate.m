@@ -32,7 +32,7 @@ LogFile *logFile;
     
 //    [self redirectNSLogToDocumentFolder];
     
-//    HLOGINFO(@"3333%@,%@",@"ddddsf",@"mmmmm");
+    HLOGINFO(@"123,456");
     
 //    const char *func = __FUNCTION__;
 //    NSString *classAndMethodStr = [NSString stringWithFormat:@"%s",func];
@@ -44,7 +44,7 @@ LogFile *logFile;
 
 
     logFile = [[LogFile alloc] init];
-    [logFile createLogFile];
+
     
     
    

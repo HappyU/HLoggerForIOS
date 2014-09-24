@@ -230,7 +230,7 @@ void WriteLog(int level,const char *func, int lineNumber, NSString *format, ...)
         case WARN_LOG:
             break;
         case INFO_LOG:
-            [Logger printfInfoWithClassName:className andMethodName:methodName];
+            [Logger printfInfoWithClassName:className andMethodName:methodName andString:string];
             break;
         case OPERATE_LOG:
             [Logger printfOpertaionWithClassName:className andMethodName:methodName andString:nil];
@@ -250,20 +250,15 @@ void WriteLog(int level,const char *func, int lineNumber, NSString *format, ...)
  *  @param className  类名
  *  @param methodName 方法名
  */
-+(void)printfInfoWithClassName:(NSString *)className andMethodName:(NSString*)methodName
++(void)printfInfoWithClassName:(NSString *)className andMethodName:(NSString*)methodName andString:(NSString *)string
 {
     NSString *eventContentString = [NSString stringWithFormat:@"%@+%@+%@",[LogPoint getAppName],className,methodName];
     
+    string = [string stringByReplacingOccurrencesOfString:@"," withString:@"，"];
+    eventContentString = [eventContentString stringByReplacingOccurrencesOfString:@"，" withString:@","];
     
-    //    NSString *userID = GET_USER(@"userID");
     NSString *userID = @"admin";
-
-//    if(LOG_LEVEL == LEVEL_INFO || LOG_LEVEL == LEVEL_DEBUG || LOG_LEVEL == LEVEL_OPERATE)
-//    {
-//         NSLog(@"<log type =\"info\"><eventID></eventID><eventDesc></eventDesc><eventContent>%@/eventClass><userID>%@</userID></log>",eventContentString,userID);
-//    }
-    
-             NSLog(@"<log type =\"info\"><eventID></eventID><eventDesc></eventDesc><eventContent>%@/eventClass><userID>%@</userID></log>",eventContentString,userID);
+    NSLog(@"info,信息,%@,%@,%@\n",string,eventContentString,userID);
    
 }
 
@@ -283,6 +278,8 @@ void WriteLog(int level,const char *func, int lineNumber, NSString *format, ...)
 //        NSString *userID = @"admin";
 //        NSLog(@"<log type=\"opertaion\"><eventID></eventID><eventDesc></eventDesc><userID>%@</userID><eventStart></eventStart><eventEnd></eventEnd><IP></IP><netstate>%@</netstate></log>",userID,[LogPoint getNetType]);
 //    }
+    NSString *userID = @"admin";
+    NSLog(@"operate,%@,%@,%@,%@,%@,%@",userID,userID,userID,userID,userID,userID);
     
 }
 
@@ -296,7 +293,9 @@ void WriteLog(int level,const char *func, int lineNumber, NSString *format, ...)
  */
 +(void)printfErrorWithString:(NSString *)string
 {
-    NSLog(@"<log type=\"error\"><eventID></eventID><eventDesc></eventDesc><eventContent>%@</eventContent></log>",string);
+    string = [string stringByReplacingOccurrencesOfString:@"," withString:@"，"];
+    
+    NSLog(@"error,异常,%@\n",string);
 }
 
 @end
