@@ -13,15 +13,16 @@
 
 
 
-//0=doc  1=cache  2=temp
-#define LOG_PATH 0
-//文件大小设置
-#define LOG_SIZE 30
+
+
 //文件输出级别设置
 #define LOG_LEVEL 
-
-//文件产生策略 1=每天生成，
+//0=doc  1=cache  2=temp
+#define LOG_PATH 0
+//文件产生策略 0=每天生成，1=按文件大小
 #define LOG_TACTICS 0
+//文件大小设置
+#define LOG_SIZE 30
 //文件上传策略
 
 #define LOG_CUR_PATH @"savePath"
@@ -150,17 +151,25 @@
 //验证文件大小
 -(void)validitySize:(packageInfo)packageBlock
 {
-    if (LOG_SIZE > 0) {
-        unsigned long long fileSize = [_fileHandle offsetInFile];
-        if (fileSize >= LOG_SIZE) {
-            //把头尾加上，封文件，然后再关闭，创建新文件
-            packageBlock();
-            [_fileHandle synchronizeFile];
-            [_fileHandle closeFile];
-            _fileHandle = nil;
-            [self createFile];
+    if (LOG_TACTICS == 1)
+    {
+        if (LOG_SIZE > 0) {
+            unsigned long long fileSize = [_fileHandle offsetInFile];
+            if (fileSize >= LOG_SIZE) {
+                //把头尾加上，封文件，然后再关闭，创建新文件
+                packageBlock();
+                [_fileHandle synchronizeFile];
+                [_fileHandle closeFile];
+                _fileHandle = nil;
+                [self createFile];
+            }
         }
     }
+    else
+    {
+        
+    }
+    
 }
 
 //往文件中插入内容
