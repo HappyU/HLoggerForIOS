@@ -27,6 +27,7 @@
 
 void WriteLog(int level, const char *func, int lineNumber, NSString *format, ...);
 
+
 #define L_LEVEL @"level"
 #define L_START @"eventStart"
 #define L_END @"eventEnd"
@@ -44,8 +45,7 @@ void WriteLog(int level, const char *func, int lineNumber, NSString *format, ...
 #define F_INFO @"type,eventID,eventContent,eventClass,userID"
 #define F_OPERATE @"type,eventID,userID,eventStart,eventEnd,IP,netstate"
 
-@interface Logger : NSObject
 
-+(void)addLogger:(NSDictionary *)dic;
+@interface Logger : NSObject
 
 @end

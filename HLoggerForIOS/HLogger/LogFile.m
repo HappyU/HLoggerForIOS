@@ -51,7 +51,7 @@
     self = [super init];
     if (self)
     {
-
+        [self createLogFile];
     }
     return self;
 }

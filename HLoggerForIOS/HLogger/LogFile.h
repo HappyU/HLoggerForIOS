@@ -29,9 +29,6 @@ typedef  void(^packageInfo)();
 //单例
 +(LogFile *)getInstance;
 
-//创建日志文件
--(void)createLogFile;
-
 //往文件中插入内容
 -(void)writeContent:(NSMutableData *)contentData withLocation:(Location) location;
 

@@ -196,7 +196,6 @@
 @implementation Logger
 
 
-
 void WriteLog(int level,const char *func, int lineNumber, NSString *format, ...)
 {
 
@@ -297,29 +296,7 @@ void WriteLog(int level,const char *func, int lineNumber, NSString *format, ...)
  */
 +(void)printfErrorWithString:(NSString *)string
 {
-
-    
     NSLog(@"<log type=\"error\"><eventID></eventID><eventDesc></eventDesc><eventContent>%@</eventContent></log>",string);
 }
-
-
-
-+(void)addLogger:(NSDictionary *)dic
-{
-
-    NSInteger level = [[dic objectForKey:@"level"] integerValue];
-    
-    if (level > LOG_LEVEL)
-    {
-        return;
-    }
-    
-    
-
-
-    
-    
-}
-
 
 @end
