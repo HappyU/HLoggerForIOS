@@ -314,20 +314,8 @@ void WriteLog(int level,const char *func, int lineNumber, NSString *format, ...)
         return;
     }
     
-    if(level == ERR_LOG)
-    {
+    
 
-        NSLog(@"<log type=\"error\"><eventID>%@</eventID><eventDesc>%@</eventDesc><eventContent>%@</eventContent></log>",[dic objectForKey:[F_ERROR objectAtIndex:1]],[dic objectForKey:[F_ERROR objectAtIndex:2]],[dic objectForKey:[F_ERROR objectAtIndex:3]]);
-
-    }
-    else if(level == INFO_LOG)
-    {
-        NSLog(@"<log type =\"info\"><eventID>%@</eventID><eventDesc>%@</eventDesc><eventContent>%@</eventContent><eventClass>%@</eventClass><userID>%@</userID></log>",[dic objectForKey:[F_INFO objectAtIndex:1]],[dic objectForKey:[F_INFO objectAtIndex:2]],[dic objectForKey:[F_INFO objectAtIndex:3]],[dic objectForKey:[F_INFO objectAtIndex:4]],[dic objectForKey:[F_INFO objectAtIndex:5]]);
-    }
-    else if(level == OPERATE_LOG)
-    {
-        NSLog(@"<log type=\"opertaion\"><eventID>%@</eventID><eventDesc>%@</eventDesc><userID>%@</userID><eventStart>%@</eventStart><eventEnd>%@</eventEnd><IP>%@</IP><netstate>%@</netstate></log>",[dic objectForKey:[F_OPERATE objectAtIndex:1]],[dic objectForKey:[F_OPERATE objectAtIndex:2]],[dic objectForKey:[F_OPERATE objectAtIndex:3]],[dic objectForKey:[F_OPERATE objectAtIndex:4]],[dic objectForKey:[F_OPERATE objectAtIndex:5]],[dic objectForKey:[F_OPERATE objectAtIndex:6]],[dic objectForKey:[F_OPERATE objectAtIndex:7]]);
-    }
 
     
     

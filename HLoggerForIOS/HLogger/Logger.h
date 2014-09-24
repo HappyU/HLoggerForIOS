@@ -39,9 +39,9 @@ void WriteLog(int level, const char *func, int lineNumber, NSString *format, ...
 #define L_EVENTDESC @"eventDesc"
 
 
-#define F_ERROR @[L_LEVEL,L_EVENTID,L_EVENTDESC,L_EVENTCONTENT]
-#define F_INFO @[L_LEVEL,L_EVENTID,L_EVENTDESC,L_EVENTCONTENT,L_EVENTCLASS,L_USREID]
-#define F_OPERATE @[L_LEVEL,L_EVENTID,L_EVENTDESC,L_USREID,L_START,L_END,L_IP,L_NETSTATE]
+#define F_ERROR @"type,eventID,eventContent"
+#define F_INFO @"type,eventID,eventContent,eventClass,userID"
+#define F_OPERATE @"type,eventID,userID,eventStart,eventEnd,IP,netstate"
 
 @interface Logger : NSObject
 
