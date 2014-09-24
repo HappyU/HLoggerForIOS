@@ -21,6 +21,8 @@ const int32_t _uncaughtExceptionMaximum = 10;
 
 @implementation AppDelegate
 
+LogFile *logFile;
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
@@ -30,30 +32,56 @@ const int32_t _uncaughtExceptionMaximum = 10;
     
 //    [self redirectNSLogToDocumentFolder];
     
-    HLOGINFO(@"3333%@,%@",@"ddddsf",@"mmmmm");
+//    HLOGINFO(@"3333%@,%@",@"ddddsf",@"mmmmm");
     
-    const char *func = __FUNCTION__;
-    NSString *classAndMethodStr = [NSString stringWithFormat:@"%s",func];
-    NSLog(@"classAndMethod = %@",classAndMethodStr);
+//    const char *func = __FUNCTION__;
+//    NSString *classAndMethodStr = [NSString stringWithFormat:@"%s",func];
+//    NSLog(@"classAndMethod = %@",classAndMethodStr);
     
-    NSArray *arr = [NSArray arrayWithObject:@"11"];
-    
-    NSString *aa = [arr objectAtIndex:10];
 
-    LogFile *logFile = [[LogFile alloc] init];
+
+
+    logFile = [[LogFile alloc] init];
     [logFile createLogFile];
     
     
-    NSData *abc = [@"456" dataUsingEncoding:NSUTF8StringEncoding];
-//    NSMutableData *data = [[NSMutableData alloc]initWithData:abc];
-    NSMutableData *data = [NSMutableData dataWithData:abc];
-    [logFile writeContent:data withLocation:LocationBegin];
+   
+    
+    
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [btn setFrame:CGRectMake(100, 100, 100, 30)];
+    [btn setTitle:@"记 录" forState:UIControlStateNormal];
+    [btn addTarget:self action:@selector(recordInfo) forControlEvents:UIControlEventTouchUpInside];
+    [self.window addSubview:btn];
+    
+    UITextField *field = [[UITextField alloc] init ];
+    field.tag = 100;
+    field.borderStyle = UITextBorderStyleLine;
+    field.clearButtonMode = UITextFieldViewModeAlways;
+    [field setFrame:CGRectMake(10, 200, 300, 30)];
+    field.font = [UIFont systemFontOfSize:20];
+    [self.window addSubview:field];
 
 
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
+}
+
+-(void)recordInfo
+{
+    UITextField *filed =(UITextField *)[self.window viewWithTag:100];
+    NSString *str = filed.text;
+    NSData *abc = [str dataUsingEncoding:NSUTF8StringEncoding];
+    NSMutableData *data = [NSMutableData dataWithData:abc];
+    [logFile writeContent:data withLocation:LocationEnd withOverSize:^{
+        NSString *headStr = @"[我是头信息]";
+        NSString *endStr= @"[我是尾信息]";
+        [logFile writeContent:[[headStr dataUsingEncoding:NSUTF8StringEncoding] mutableCopy] withLocation:LocationBegin];
+        [logFile writeContent:[[endStr dataUsingEncoding:NSUTF8StringEncoding] mutableCopy] withLocation:LocationEnd];
+    }];
+    
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

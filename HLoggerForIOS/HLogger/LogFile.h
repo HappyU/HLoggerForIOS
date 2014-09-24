@@ -21,6 +21,9 @@ typedef NS_ENUM(NSInteger, Tactics){
     TacticsEveryUpload = 1
 };
 
+typedef  void(^packageInfo)();
+
+
 @interface LogFile : NSObject
 
 //单例
@@ -31,5 +34,8 @@ typedef NS_ENUM(NSInteger, Tactics){
 
 //往文件中插入内容
 -(void)writeContent:(NSMutableData *)contentData withLocation:(Location) location;
+
+//往文件中插入内容，并判断文件的大小
+-(void)writeContent:(NSMutableData *)contentData withLocation:(Location) location withOverSize:(packageInfo)packageBlock;
 
 @end

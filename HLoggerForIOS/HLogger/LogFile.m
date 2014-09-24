@@ -16,7 +16,7 @@
 //0=doc  1=cache  2=temp
 #define LOG_PATH 0
 //文件大小设置
-#define FILE_VALIDITY_SIZE
+#define LOG_SIZE 1000
 //文件输出级别设置
 #define LOG_LEVEL 
 
@@ -25,6 +25,8 @@
 //文件上传策略
 
 #define LOG_CUR_PATH @"savePath"
+
+
 
 
 @implementation LogFile
@@ -49,18 +51,11 @@
     self = [super init];
     if (self)
     {
-        
+
     }
     return self;
 }
 
--(void)allocFileHandle
-{
-    if (_fileHandle == nil)
-    {
-        _fileHandle = [NSFileHandle fileHandleForUpdatingAtPath:@""];
-    }
-}
 
 
 //获取存放路径（Doc，Cache，Temp）
@@ -153,30 +148,44 @@
 }
 
 //验证文件大小
--(void)validitySize:(NSString *)fileName
+-(void)validitySize:(packageInfo)packageBlock
 {
-    
+    if (LOG_SIZE > 0) {
+        unsigned long long fileSize = [_fileHandle offsetInFile];
+        if (fileSize >= LOG_SIZE) {
+            //把头尾加上，封文件，然后再关闭，创建新文件
+            packageBlock();
+            [_fileHandle synchronizeFile];
+            [_fileHandle closeFile];
+            _fileHandle = nil;
+            [self createFile];
+        }
+    }
 }
 
 //往文件中插入内容
 -(void)writeContent:(NSMutableData *)contentData withLocation:(Location) location
 {
     NSString *logPath =[[self getFolderPath] stringByAppendingPathComponent:[self readLogPath]];
-    NSFileHandle *updateFile = [NSFileHandle fileHandleForUpdatingAtPath:logPath];
+    _fileHandle = [NSFileHandle fileHandleForUpdatingAtPath:logPath];
     if (location == LocationBegin)
     {
-        NSData *logData = [updateFile availableData];
+        NSData *logData = [_fileHandle availableData];
         [contentData appendData:logData];
-        [updateFile seekToFileOffset:0];
+        [_fileHandle seekToFileOffset:0];
     }
     else
     {
-        [updateFile seekToEndOfFile];
+        [_fileHandle seekToEndOfFile];
     }
-    [updateFile writeData:contentData];
-    [updateFile synchronizeFile];
-    [updateFile closeFile];
-    updateFile = nil;
+    [_fileHandle writeData:contentData];
+}
+
+//往文件中插入内容
+-(void)writeContent:(NSMutableData *)contentData withLocation:(Location) location withOverSize:(packageInfo)packageBlock
+{
+    [self writeContent:contentData withLocation:location];
+    [self validitySize:packageBlock];
 }
 
 //读取日志的路径信息
